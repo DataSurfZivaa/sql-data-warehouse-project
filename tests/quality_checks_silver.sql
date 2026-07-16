@@ -220,7 +220,7 @@ FROM silver.erp_loc_a101
 ORDER BY cntry
 
 -- ========================================================================================
--- Check 'silver.erp_px_g1v2'
+-- Check 'silver.erp_px_cat_g1v2'
 -- ========================================================================================
 -- Cek Connection
 SELECT
@@ -228,14 +228,14 @@ SELECT
 	cat,
 	subcat,
 	maintenance	
-FROM silver.erp_px_g1v2
+FROM silver.erp_px_cat_g1v2
 SELECT 
 	prd_key
 FROM silver.crm_prd_info;
 
 -- Check for Unwanted Spaces
 SELECT *
-FROM silver.erp_px_g1v2
+FROM silver.erp_px_cat_g1v2
 WHERE cat != TRIM(cat)
 	OR subcat != TRIM(subcat)
 	OR maintenance != TRIM(maintenance);
@@ -243,14 +243,14 @@ WHERE cat != TRIM(cat)
 -- Data Standardization & Consistency
 SELECT DISTINCT
 	cat
-FROM silver.erp_px_g1v2;
+FROM silver.erp_px_cat_g1v2;
 
 -- Data Standardization & Consistency
 SELECT DISTINCT
 	subcat
-FROM silver.erp_px_g1v2;
+FROM silver.erp_px_cat_g1v2;
 
 -- Data Standardization & Consistency
 SELECT DISTINCT
 	maintenance
-FROM silver.erp_px_g1v2;
+FROM silver.erp_px_cat_g1v2;
